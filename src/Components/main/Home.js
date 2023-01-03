@@ -1,7 +1,8 @@
-import Tasks from "./Tasks";
-import AddTask from "./AddTask";
+import Tasks from "../Task/Tasks";
+import AddTask from "../Task/AddTask";
 import { useState, useEffect } from "react";
-import Header from "./Header";
+import Header from "../common/Header";
+import Button from "../common/Button";
 
 const Home = () => {
   const [showAddTask, setShowAddTask] = useState(false);
@@ -75,9 +76,11 @@ const Home = () => {
   };
   return (
     <>
-      <Header
-        onAdd={() => setShowAddTask(!showAddTask)}
-        showAdd={showAddTask}
+      <Header />
+      <Button
+        onClick={() => setShowAddTask(!showAddTask)}
+        color={showAddTask ? "red" : "green"}
+        text={showAddTask ? "Close" : "Add"}
       />
       {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? (

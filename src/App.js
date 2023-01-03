@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import Footer from "./Components/Footer";
-import Home from "./Components/Home";
-import About from "./Components/About";
+import Footer from "./Components/common/Footer";
+import Home from "./Components/main/Home";
+import About from "./Components/main/About";
 function App() {
   return (
     <div className="container">
